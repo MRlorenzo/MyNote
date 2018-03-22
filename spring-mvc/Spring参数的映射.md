@@ -1,0 +1,112 @@
+# Spring的参数映射
+
+## 原生servlet-API
+直接定义在方法的参数即可
+```
+    @GetMapping("test1")
+    public String mapping1(HttpServletRequest request, HttpSession session){
+        return "index";
+    }
+```
+
+## 表单的参数映射
+使用model封装视图数据(在requestScope中可以获取)
+```
+    @GetMapping("test2")
+    public String mapping2(Model model){
+
+        model.addAttribute("info","用户信息");
+        Users user = new Users();
+        user.setUserName("GouZi");
+        user.setAge(23);
+        model.addAttribute("user",user);
+
+        return "index2";
+    }
+
+```
+使用ModelMap封装视图数据(在requestScope中可以获取)
+```
+    @GetMapping("/test3")
+    public String mapping3(ModelMap modelMap){
+        modelMap.addAttribute("info","用户信息");
+        Users user = new Users();
+        user.setUserName("GouZi");
+        user.setAge(23);
+        modelMap.addAttribute("user",user);
+        return "index2";
+    }
+```
+使用Map封装视图数据(在requestScope中可以获取)
+```
+    @GetMapping("/test4")
+    public String mapping4(Map<String , Object> map){
+        map.put("info","用户信息");
+        Users user = new Users();
+        user.setUserName("GouZi");
+        user.setAge(23);
+        map.put("user",user);
+        return "index2";
+    }
+```
+使用ModelAndView来绑定视图,那么方法放回值必须是ModelAndView的类型
+ModelAndView有很多构造方法的重载，可以传入视图名称以及Model对象等等按需选择即可
+```
+    @GetMapping("/test5")
+    public ModelAndView mapping5(){
+
+        Users user = new Users();
+        user.setAge(23);
+        user.setUserName("GouZi");
+        ModelAndView mav = new ModelAndView("index2");
+        //可以通过getModel的方法来获取一个Model对象
+        //也可以通过getModelMap方法来获取一个ModelMap对象
+        Map<String , Object> model = mav.getModel();
+        model.put("info","用户信息");
+        model.put("user",user);
+        return mav;
+    }
+	
+	@GetMapping("/test6")
+    public ModelAndView mapping6(){
+        Map<String , Object> map = new HashMap<>();
+        Users user = new Users();
+        user.setUserName("GouZi");
+        user.setAge(23);
+        map.put("user",user);
+        return new ModelAndView("index2",map);
+    }
+```
+### modelAttribute注解使用
+方式一：将注解声明在方法的参数上
+表示将参数对象放入到Model中
+```
+    @PostMapping("/test7")
+    public String mapping7(@ModelAttribute("user") Users user){
+
+        return "index3";
+    }
+```
+方式二，将注解声明在一个方法上
+Spring会在调用具体请求处理方法之前，
+先执行所有带有@ModelAttribute注解所修饰的方法，并将这个方法的返回值存放到Model中
+注意：如果遇到@ModelAttribute注解修饰的参数，那么表单映射的数据会覆盖这个Model中的数据
+```
+ 	@ModelAttribute("user")
+    public Users getUser(){
+        Users user = new Users();
+        user.setUserName("GouZi");
+        user.setAge(23);
+        return user;
+    }
+
+```
+因此，当执行这个请求处理方法时，会先从之前的Model中取出USER对象并复制到方法的参数中
+```
+    @GetMapping("/test8")
+    public String mapping8(@ModelAttribute("user") Users user){
+
+        return "index3";
+    }
+
+```
