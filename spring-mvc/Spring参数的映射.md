@@ -1,5 +1,36 @@
 # Spring的参数映射
 
+## @RequestParam
+ * @RequestParam 用于映射表单input元素的name属性
+ * 如果不使用这个注解，那么方法的参数名就必须和表单input元素的name对应
+```
+    @PostMapping("/test1")
+    public String mapping1(@RequestParam("userName") String userName , int age){
+        System.out.println("userName:"+userName);
+        System.out.println("age:"+age);
+        return "index";
+    }
+```
+* 将表单数据映射为实体对象
+* 注意：表单Input的name属性只需要对应实体中的字段名即可
+```
+    @PostMapping("/test2")
+    public String mapping2(Users user){
+        System.out.println("userName:"+user.getUserName());
+        System.out.println("age:" + user.getAge());
+        return "index";
+    }
+```
+* 将请求路径作为参数映射，使用{}来定义变量
+* 方法参数必须使用@PathVariable注解来对应{}中的名称
+```
+@GetMapping("/user/{userId}")
+public String mapping3(@PathVariable("userId") String uid){
+	System.out.println(uid);
+	return "index";
+}
+```
+
 ## 原生servlet-API
 直接定义在方法的参数即可
 ```
@@ -9,7 +40,7 @@
     }
 ```
 
-## 表单的参数映射
+## 参数传递
 使用model封装视图数据(在requestScope中可以获取)
 ```
     @GetMapping("test2")

@@ -1,5 +1,15 @@
 # Spring-MVC对表单数据的验证
 
+表单验证所需依赖：
+```
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>5.4.1.Final</version>
+        </dependency>
+
+```
+
 ## 第一步：指定验证规则
 在实体类的字段上加入验证注解
 ```
