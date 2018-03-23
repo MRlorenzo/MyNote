@@ -21,6 +21,7 @@
         return "index";
     }
 ```
+## @PathVariable
 * 将请求路径作为参数映射，使用{}来定义变量
 * 方法参数必须使用@PathVariable注解来对应{}中的名称
 ```
@@ -30,6 +31,21 @@ public String mapping3(@PathVariable("userId") String uid){
 	return "index";
 }
 ```
+
+## @RequestBody
+ * 使用@RequestBody将请求体中的那内容转换为方法的参数对象
+ * 这里是将请求体中的JSON字符串转换为Users对象
+```
+    @PostMapping("/add")
+    public String addUser(@RequestBody Users user){
+        System.out.println(user.getUserName());
+        System.out.println(user.getTel());
+        System.out.println(user.getAge());
+        System.out.println(user.getBirth());
+        return "ok";
+    }
+```
+
 
 ## 原生servlet-API
 直接定义在方法的参数即可
