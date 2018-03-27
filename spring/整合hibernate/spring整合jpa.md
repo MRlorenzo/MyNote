@@ -67,14 +67,14 @@ Spring核心依赖
 ```
 启用注解处理器并指定扫描的包路径
 ```
-<context:component-scan base-package="edu.nf.ch17" />
+<context:component-scan base-package="xxx" />
 ```
 配置数据源
 ```
 <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
 	<!--连接属性-->
 	<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-	<property name="url" value="jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=UTF-8"/>
+	<property name="url" value="jdbc:mysql://localhost:3306/xxx?useUnicode=true&amp;characterEncoding=UTF-8"/>
 	<property name="username" value="root"/>
 	<property name="password" value="root"/>
 	<!--连接池启动时的初始连接数-->
@@ -112,7 +112,7 @@ Spring核心依赖
 	<!-- 注入适配器 -->
 	<property name="jpaVendorAdapter" ref="vendorAdapter"/>
 	<!-- 实体的扫描路径 -->
-	<property name="packagesToScan" value="edu.nf.ch17.entity"/>
+	<property name="packagesToScan" value="xxx"/>
 </bean>
 ```
 配置JPA事务管理器，使用JpaTransactionManager

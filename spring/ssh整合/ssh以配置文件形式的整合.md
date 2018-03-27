@@ -153,7 +153,7 @@ Spring核心依赖：
 ```
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=UTF-8"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/xxx?useUnicode=true&amp;characterEncoding=UTF-8"/>
         <property name="username" value="root"/>
         <property name="password" value="root"/>
         <property name="initialSize" value="5"/>
@@ -205,14 +205,14 @@ Spring核心依赖：
     </bean>
 
     <!--配置UsersService-->
-    <bean id="userService" class="edu.nf.ch16.service.impl.UsersServiceImpl">
+    <bean id="userService" class="xxx">
         <property name="usersDao" ref="userDao"/>
     </bean>
 ```
 将Action类交给Spring管理：
 ```
     <!--配置userAction-->
-    <bean id="userAction" class="edu.nf.ch16.controller.UserAction">
+    <bean id="userAction" class="xxx">
         <property name="usersService" ref="userService"/>
     </bean>
 ```

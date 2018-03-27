@@ -25,7 +25,7 @@ public class UserAction {
 
 ```
 //创建注解解析工厂，在构建方法中传入需要扫描的包
-ApplicationContext context = new AnnotationConfigApplicationContext("edu.nf.ch05");
+ApplicationContext context = new AnnotationConfigApplicationContext("xxx");
 
 UserAction action = context.getBean("userAction",UserAction.class);
 action.execute();

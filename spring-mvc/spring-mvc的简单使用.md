@@ -77,7 +77,7 @@ Spring-MVC所需依赖
 ```
 启用注解并扫描包 
 ```
-    <context:component-scan base-package="edu.nf.ch01.controller"/>
+    <context:component-scan base-package="xxx"/>
 ```
 启用mvc注解驱动
 	注意：

@@ -16,13 +16,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- 配置Bean,id表示Bean在容器中的唯一标识，class指定Bean的完整类名 -->
-    <bean id="hello" class="org.nf.ch01.Hello"/>
+    <bean id="hello" class="xxx"/>
 
 
     <!-- 配置Bean，name属性表示Bean在容器中的名称，但是这个名称是可以有多个的
          并且多个别名之间可以用逗号分隔，也可以使用空格等其他字符分隔
          如果只是指定了name而没有指定id，那么name属性的第一个名称就作为id-->
-    <bean name="hello2,h2,he2" class="org.nf.ch01.Hello2"/>
+    <bean name="hello2,h2,he2" class="xxx"/>
 
 </beans>
 ```

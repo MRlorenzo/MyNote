@@ -8,7 +8,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- init-method是构建Bean之后的初始化方法，destroy-method指定销毁的方法 -->
-    <bean id="hello" class="edu.nf.ch02.Hello" init-method="init" destroy-method="destroy"/>
+    <bean id="hello" class="xxx" init-method="init" destroy-method="destroy"/>
 
 </beans>
 ```

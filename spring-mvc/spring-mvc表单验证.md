@@ -52,7 +52,7 @@ user.email.email = 请输入合法的Email地址
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <context:component-scan base-package="edu.nf.ch06"/>
+    <context:component-scan base-package="xxx"/>
 
     <mvc:default-servlet-handler/>
 

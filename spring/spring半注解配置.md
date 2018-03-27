@@ -13,7 +13,7 @@
     <!--<context:annotation-config/>-->
     <!--启用spring的注解扫描，并指定需要扫描的包，
     它会扫描当前包以及子包下所有的类-->
-    <context:component-scan base-package="org.nf.ch04"/>
+    <context:component-scan base-package="xxx"/>
 
 </beans>
 ```

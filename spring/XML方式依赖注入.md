@@ -8,7 +8,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="tools" class="edu.nf.ch07.impl.Wrench"/>
+    <bean id="tools" class="xxx"/>
 
     <!--配置Worker-->
     <bean id="worker" class="edu.nf.ch07.Worker">
@@ -17,7 +17,7 @@
         <constructor-arg name="tools" ref="tools"></constructor-arg>
     </bean>
 	<!--注入值的方式-->
-    <bean id="demo" class="edu.nf.ch07.InjectValueDemo">
+    <bean id="demo" class=xxx">
         <constructor-arg name="userName" value="lorenzo"/>
         <constructor-arg name="age" value="21"/>
     </bean>

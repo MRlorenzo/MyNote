@@ -29,7 +29,7 @@
 
 ```
 配置文件上传解析器，这里使用spring封装的Servlet3的上传解析器
-注意：(解析器的ID不能为'multipartResolver',一个莫名其妙的错误待解决。)
+注意：(解析器的ID不能为'multipartResolver'。)
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -38,7 +38,7 @@
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <context:component-scan base-package="edu.nf.ch07.controller"/>
+    <context:component-scan base-package="xxx"/>
 
     <mvc:annotation-driven/>
 
@@ -96,7 +96,7 @@
 	<version>1.3.2</version>
 </dependency>
 ```
-在Spring核心配置文件中配置文件上传解析器
+在Spring核心配置文件中配置文件上传解析器,ID必须为‘multipartResolver’
 ```
     <!--文件上传属性-->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

@@ -136,13 +136,13 @@ public interface UserDao {
 ```
 启用注解并扫描指定的包
 ```
-    <context:component-scan base-package="edu.nf.ch12"/>
+    <context:component-scan base-package="xxx"/>
 ```
 配置DBCP2的数据源连接池
 ```
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=UTF-8"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/xxx?useUnicode=true&amp;characterEncoding=UTF-8"/>
         <property name="username" value="root"/>
         <property name="password" value="root"/>
 
@@ -165,7 +165,7 @@ public interface UserDao {
         <!-- 注入数据源 -->
         <property name="dataSource" ref="dataSource"/>
         <!-- 指定实体类型的别名 -->
-        <property name="typeAliasesPackage" value="edu.nf.ch12.entity"/>
+        <property name="typeAliasesPackage" value="xxx"/>
         <!-- 当配置了mapper映射配置的时候，那么这里要指定mapper的路径 -->
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
 
@@ -190,7 +190,7 @@ Mapper接口(也就是Dao接口)的扫描配置,
 ```
     <bean id="mapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <!-- 指定Dao接口所在的包 -->
-        <property name="basePackage" value="edu.nf.ch12.dao"/>
+        <property name="basePackage" value="xxx"/>
     </bean>
 ```
 配置声明式事务

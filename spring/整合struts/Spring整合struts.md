@@ -88,7 +88,7 @@ Spring核心依赖：
 将Action类交给Spring管理：
 ```
     <!--配置userAction-->
-    <bean id="userAction" class="edu.nf.ch16.controller.UserAction">
+    <bean id="userAction" class="xxx">
         <property name="usersService" ref="userService"/>
     </bean>
 ```

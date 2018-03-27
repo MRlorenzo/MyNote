@@ -11,7 +11,7 @@
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--启用注解被扫描指定的包-->
-    <context:component-scan base-package="edu.ch13"/>
+    <context:component-scan base-package="xxx"/>
 
     <!--启用aspectJ的注解以及表达式的支持,
         proxy-target-class="true"表示强制使用cglib代理

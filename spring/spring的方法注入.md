@@ -9,9 +9,9 @@
        xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="wrench" class="edu.nf.ch08.impl.Wrench"/>
+    <bean id="wrench" class="xxx"/>
 
-    <bean id="worker" class="edu.nf.ch08.Worker">
+    <bean id="worker" class="xxxr">
         <!--通过set方法注入-->
         <property name="tools" ref="wrench"/>
     </bean>
@@ -29,7 +29,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--注入对象的格式：p:属性名-ref = "bean的id"-->
-    <bean id="worker2" class="edu.nf.ch08.Worker" p:tools-ref="wrench"/>
+    <bean id="worker2" class="xxx" p:tools-ref="wrench"/>
 
     <!--注入值的格式：p:属性名="值"-->
     <bean id="demo" class="edu.nf.ch08.InjectValueDemo" p:userName="lorenzo" p:age="22"/>
